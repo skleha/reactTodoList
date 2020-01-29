@@ -9,27 +9,23 @@ class App extends React.Component {
     }
   }
 
-
+  handleInput(item) {
+    return(e) => {
+      this.state.todoItems.push(e.target.value);
+    }
+  }
   
-
-
   render() {
     return (
       <div>
-        <h1>Task List</h1>
+        <h1>Add Task</h1>
 
         <form>
-          <input
-            type="text"
-            placeholder="whaddya gotta do?">
-          </input>
+          <input type="text" placeholder="whaddya gotta do?"></input>
 
-          <input
-            type="submit"
-            value="Click to Add">
-          </input>
-        
+          <input type="submit" value="Click to Add"></input>
         </form>
+
       </div>
     );
   }
