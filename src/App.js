@@ -1,10 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  
+
   return (
-    <h1>React is working</h1> 
+    <div>
+      <h1>Task List</h1>
+      <input
+        type="text"
+        placeholder="Add to do"
+      >
+      </input>
+
+    </div>
   );
 }
 
