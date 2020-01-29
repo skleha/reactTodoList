@@ -36,6 +36,7 @@ class App extends React.Component {
           <input
             type="text"
             placeholder="whaddya gotta do?"
+            value={this.state.currentTodo}
             onChange={this.handleChange('currentTodo')}>
           </input>
 
