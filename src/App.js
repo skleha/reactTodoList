@@ -1,4 +1,5 @@
 import React from 'react';
+import './styleSheets/styling.css';
 
 class App extends React.Component {
   
@@ -29,6 +30,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <div className="header">Task Lister</div>
+
         <h1>Add Task</h1>
 
         <form>
