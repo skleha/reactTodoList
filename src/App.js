@@ -12,7 +12,6 @@ class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.keyPressed = this.keyPressed.bind(this);
   }
 
 
@@ -30,13 +29,6 @@ class App extends React.Component {
     }
   }
   
-  keyPressed(e) {
-    if (e.key === "Enter") {
-      return this.handleSubmit(e);
-    }
-  }
-
-
   render() {
     return (
       <div>
