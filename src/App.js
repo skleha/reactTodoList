@@ -23,15 +23,16 @@ class App extends React.Component {
   }
 
   handleSubmit(e) {
+    if (e.key === "Enter") {
     e.preventDefault();
     this.state.todoItems.push(this.state.currentTodo);
     this.setState({currentTodo: ""});
+    }
   }
   
   keyPressed(e) {
     if (e.key === "Enter") {
-      this.state.todoItems.push(this.state.currentTodo);
-      this.setState({ currentTodo: "" });
+      return this.handleSubmit(e);
     }
   }
 
@@ -52,7 +53,7 @@ class App extends React.Component {
               className="add-task-input"
               value={this.state.currentTodo}
               onChange={this.handleChange('currentTodo')}
-              onKeyPress={this.keyPressed}>
+              onKeyPress={this.handleSubmit}>
             </input>
           </form>
 
@@ -71,6 +72,5 @@ class App extends React.Component {
   }
 
 }
-
 
 export default App;
