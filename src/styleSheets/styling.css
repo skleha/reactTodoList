@@ -15,6 +15,15 @@
   border: solid 1px black;
 }
 
+.add-task-input {
+  height: 20px;
+  width: 190px;
+  padding-left: 10px;
+  font-family: 'Exo 2', sans-serif;
+
+
+}
+
 .task-input-form {
   margin-top: 10px;
   margin-bottom: 10px;
