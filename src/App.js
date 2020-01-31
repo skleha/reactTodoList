@@ -50,10 +50,12 @@ class App extends React.Component {
           </form>
 
           <h1>All Tasks:</h1>
-          <ul>
+          <ul className="task-ul">
             {this.state.todoItems.map((item, idx) =>
             <li key={idx}>
-              <input type="checkbox"></input>
+              <input
+                type="checkbox"
+                className="task-checkbox"></input>
               {item}
             </li>
             )}

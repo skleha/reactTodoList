@@ -20,8 +20,6 @@
   width: 190px;
   padding-left: 10px;
   font-family: 'Exo 2', sans-serif;
-
-
 }
 
 .task-input-form {
@@ -30,3 +28,11 @@
   display: flex;
 }
 
+.task-ul {
+  margin-top: 7px;
+  font-size: 13px;
+}
+
+.task-checkbox {
+  margin-right: 7px;
+}
