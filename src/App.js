@@ -1,4 +1,5 @@
 import React from 'react';
+import './styleSheets/styling.css';
 
 class App extends React.Component {
   
@@ -11,6 +12,7 @@ class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.keyPressed = this.keyPressed.bind(this);
   }
 
 
@@ -26,36 +28,43 @@ class App extends React.Component {
     this.setState({currentTodo: ""});
   }
   
+  keyPressed(e) {
+    if (e.key === "Enter") {
+      this.state.todoItems.push(this.state.currentTodo);
+      this.setState({ currentTodo: "" });
+    }
+  }
+
+
   render() {
     return (
       <div>
-        <h1>Add Task</h1>
+        <div className="header">Task Lister</div>
 
-        <form>
-          <input
-            type="text"
-            placeholder="whaddya gotta do?"
-            value={this.state.currentTodo}
-            onChange={this.handleChange('currentTodo')}>
-          </input>
+        <div className="task-add-and-task-ul">
 
-          <input
-            type="submit"
-            value="Click to Add"
-            onClick={this.handleSubmit}>
-          </input>
+          <h2>Add Task:</h2>
 
-        </form>
+          <form className="task-input-form">
+            <input
+              type="text"
+              placeholder="whaddya gotta do?"
+              className="add-task-input"
+              value={this.state.currentTodo}
+              onChange={this.handleChange('currentTodo')}
+              onKeyPress={this.keyPressed}>
+            </input>
+          </form>
 
-        <h1>All Tasks:</h1>
+          <h1>All Tasks:</h1>
+          <ul>
+            {this.state.todoItems.map((item, idx) => {
+              return <li key={idx}>{item}</li>
+            })}
 
-        <ul>
-          {this.state.todoItems.map((item, idx) => {
-            return <li key={idx}>{item}</li>
-          })}
+          </ul>
 
-        </ul>
-
+        </div>
 
       </div>
     );

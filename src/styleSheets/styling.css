@@ -1,0 +1,23 @@
+
+.header {
+  padding-top: 30px;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  height: 40px;
+  font-size: 20px;
+  background-color: lightgoldenrodyellow;
+}
+
+.task-add-and-task-ul {
+  padding: 10px;
+  width: 200px;
+  margin-left: 40px;
+  border: solid 1px black;
+}
+
+.task-input-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
