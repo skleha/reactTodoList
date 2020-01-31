@@ -12,6 +12,7 @@ class App extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.keyPressed = this.keyPressed.bind(this);
   }
 
 
@@ -27,6 +28,14 @@ class App extends React.Component {
     this.setState({currentTodo: ""});
   }
   
+  keyPressed(e) {
+    if (e.key === "Enter") {
+      this.state.todoItems.push(this.state.currentTodo);
+      this.setState({ currentTodo: "" });
+    }
+  }
+
+
   render() {
     return (
       <div>
@@ -42,14 +51,8 @@ class App extends React.Component {
               placeholder="whaddya gotta do?"
               className="add-task-input"
               value={this.state.currentTodo}
-              onChange={this.handleChange('currentTodo')}>
-            </input>
-
-            <input
-              type="submit"
-              value="Click to Add"
-              className="add-task-submit"
-              onClick={this.handleSubmit}>
+              onChange={this.handleChange('currentTodo')}
+              onKeyPress={this.keyPressed}>
             </input>
           </form>
 
