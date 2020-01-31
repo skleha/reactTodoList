@@ -32,33 +32,36 @@ class App extends React.Component {
       <div>
         <div className="header">Task Lister</div>
 
-        <h1>Add Task</h1>
+        <div className="task-add-and-task-ul">
 
-        <form>
-          <input
-            type="text"
-            placeholder="whaddya gotta do?"
-            value={this.state.currentTodo}
-            onChange={this.handleChange('currentTodo')}>
-          </input>
+          <h2>Add Task:</h2>
 
-          <input
-            type="submit"
-            value="Click to Add"
-            onClick={this.handleSubmit}>
-          </input>
+          <form className="task-input-form">
+            <input
+              type="text"
+              placeholder="whaddya gotta do?"
+              className="add-task-input"
+              value={this.state.currentTodo}
+              onChange={this.handleChange('currentTodo')}>
+            </input>
 
-        </form>
+            <input
+              type="submit"
+              value="Click to Add"
+              className="add-task-submit"
+              onClick={this.handleSubmit}>
+            </input>
+          </form>
 
-        <h1>All Tasks:</h1>
+          <h1>All Tasks:</h1>
+          <ul>
+            {this.state.todoItems.map((item, idx) => {
+              return <li key={idx}>{item}</li>
+            })}
 
-        <ul>
-          {this.state.todoItems.map((item, idx) => {
-            return <li key={idx}>{item}</li>
-          })}
+          </ul>
 
-        </ul>
-
+        </div>
 
       </div>
     );
