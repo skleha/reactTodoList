@@ -32,7 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="header">Task Lister</div>
+        <div className="header">React Todo List</div>
 
         <div className="task-add-and-task-ul">
 
@@ -41,7 +41,7 @@ class App extends React.Component {
           <form className="task-input-form">
             <input
               type="text"
-              placeholder="whaddya gotta do?"
+              placeholder="press enter to log task"
               className="add-task-input"
               value={this.state.currentTodo}
               onChange={this.handleChange('currentTodo')}
@@ -51,9 +51,12 @@ class App extends React.Component {
 
           <h1>All Tasks:</h1>
           <ul>
-            {this.state.todoItems.map((item, idx) => {
-              return <li key={idx}>{item}</li>
-            })}
+            {this.state.todoItems.map((item, idx) =>
+            <li key={idx}>
+              <input type="checkbox"></input>
+              {item}
+            </li>
+            )}
 
           </ul>
 
