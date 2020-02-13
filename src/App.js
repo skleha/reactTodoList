@@ -28,6 +28,11 @@ class App extends React.Component {
     this.setState({currentTodo: ""});
     }
   }
+
+  toggleUnderline(e) {
+    console.log(e);
+
+  }
   
   render() {
     return (
@@ -55,7 +60,8 @@ class App extends React.Component {
             <li key={idx}>
               <input
                 type="checkbox"
-                className="task-checkbox"></input>
+                className="task-checkbox"
+                onChange={this.toggleUnderline}></input>
               {item}
             </li>
             )}
