@@ -15,6 +15,10 @@
   border: solid 1px black;
 }
 
+.task-add-and-task-ul li {
+  margin-bottom: 5px;
+}
+
 .add-task-input {
   height: 20px;
   width: 190px;
